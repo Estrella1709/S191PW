@@ -29,6 +29,7 @@
             </div>
         </div>
     </nav>
+
     {{-- finaliza navbar --}}
 
     @yield('contenido')

@@ -1,15 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\controladorVistas;
 
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
+Route::get('/', [controladorVistas::class,'home'])->name('rutaInicio');
 
-Route::view('/', 'inicio')->name('rutaInicio');
+Route::get('/formulario', [controladorVistas::class,'insert'])->name('rutacacas');
+
+Route::get('/consultar', [controladorVistas::class,'select'])->name('rutaconsulta');
+
+
+
+
+/* Route::view('/', 'inicio')->name('rutaInicio');
 
 Route::view('/formulario','formulario')->name('rutacacas');
 
-Route::view('/consultar','clientes')->name('rutaconsulta');
+Route::view('/consultar','clientes')->name('rutaconsulta'); */
 
 Route::view('/component', 'componentes')->name('rutacomponentes');

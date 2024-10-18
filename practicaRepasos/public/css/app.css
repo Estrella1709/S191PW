@@ -1,0 +1,17 @@
+body {
+    background: linear-gradient(to right, #5ffffa, #2323f2); 
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 18rem;
+    margin: 1rem; /* Agrega un margen alrededor de cada tarjeta */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
+}

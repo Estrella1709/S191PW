@@ -6,7 +6,6 @@
     
     @vite (['resources/js/app.js'])
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     
     <title>Practica repaso - Portada</title>
 </head>

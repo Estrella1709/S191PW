@@ -52,6 +52,14 @@
             <span class="visually-hidden">Next</span>
         </button>
         </div>
+
+        <br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+
+            <a class="btn btn-primary" href="/repaso1">Repaso 1</a>
+            
+        </div>
+
         
 </body>
 </html>

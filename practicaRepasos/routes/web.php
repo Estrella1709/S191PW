@@ -7,3 +7,5 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 Route::view('/portada', 'portada');
+
+Route::view('/repaso1', 'repaso1');

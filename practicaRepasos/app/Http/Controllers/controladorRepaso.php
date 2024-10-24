@@ -21,8 +21,11 @@ class controladorRepaso extends Controller
             'valor' => 'required|numeric'
         ]);
     
+        //el input valor es el valor que obtengo del formulario al cual estamos llenando
+        //en este caso el valor numerico que ingresamos
         $mb = $request->input('valor');
 
+        //operación
         $gb = $mb / 1024;
     
         //redirect()->back(): Es lo que nos va a redirigir a la vista repaso 1 al momento de mostrar el resultado

@@ -28,6 +28,14 @@ class controladorVistas extends Controller
 
     public function procesarCliente(Request $peticion){
           
+        $validacion= $peticion->validate([
+            'txtnombre'=>'required|min:3|max:20',
+            'txtapellido'=>'required',
+            'txtcorreo'=>'required|email:rfc,dns',
+            'txttelefono'=>'required|numeric'
+        ]);
+
+
         //return redirect('/');
         //return redirect()->route('rutaconsulta');
         //return back();
@@ -39,5 +47,8 @@ class controladorVistas extends Controller
         session()->flash('exito', 'Se guardo el usuario: '. $usuario);
                         //primer parametro es la llave, el segundo es el mensaje
         return to_route('rutacacas');
+
+
+
     }
 }

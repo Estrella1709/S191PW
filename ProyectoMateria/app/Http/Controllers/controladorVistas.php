@@ -13,4 +13,12 @@ class controladorVistas extends Controller
     public function registro(){
         return view('registro');
     }
+
+    public function validacionRegistro(){
+        return view('validacionRegistro');
+    }
+
+    public function recuperacionCuenta(){
+        return view('recuperacionCuenta');
+    }
 }

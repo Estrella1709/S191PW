@@ -19,7 +19,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="{{ asset('css/Registro.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('css/validacionRegistro.css') }}"> 
 </head>
 <body>
     <div class="container">
@@ -28,26 +28,16 @@
             <h1>Turista sin Maps</h1>
         </div>
         <h3>Registro</h3>   
+        <br>
+        <p>Se te enviará al correo que ingresaste un código de confirmación para validar tu registro</p>
         <div class="form-group">
-            <input type="text" class="custom-input" placeholder="Nombre">
+            <input type="text" class="custom-input" placeholder="Código">
         </div>
-        <div class="form-group">
-            <input type="text" class="custom-input" placeholder="Apellidos">
-        </div>
-        <div class="form-group">
-            <input type="text" class="custom-input" placeholder="Correo Electrónico">
-        </div>
-        <div class="form-group">
-            <input type="text" class="custom-input" placeholder="Teléfono">
-        </div>
-        <div class="form-group">
-            <input type="password" class="custom-input" placeholder="Contraseña">
-        </div>
-        <a href="">¿Ya tienes una cuenta?</a>
+        <a href="">Reenviar código</a>
         <br>
         <br>
         <div class="btn-container">
-            <button type="button">Registrar</button>
+            <button type="button">Finalizar</button>
         </div>
     </div>
 </body>

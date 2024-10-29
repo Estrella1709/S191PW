@@ -21,4 +21,8 @@ class controladorVistas extends Controller
     public function recuperacionCuenta(){
         return view('recuperacionCuenta');
     }
+
+    public function hoteles(){
+        return view('hoteles');
+    }
 }

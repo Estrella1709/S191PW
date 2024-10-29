@@ -7,3 +7,4 @@ Route::get('/', [controladorVistas::class, 'inicioSesion'])->name('rutaInicioSes
 Route::get('/registro', [controladorVistas::class, 'registro'])->name('rutaRegistro');
 Route::get('/validacionRegistro', [controladorVistas::class, 'validacionRegistro'])->name('rutaValidacionRegistro');
 Route::get('/recuperacionCuenta', [controladorVistas::class, 'recuperacionCuenta'])->name('rutaRecuperacionCuenta');
+Route::get('/hoteles', [controladorVistas::class, 'hoteles'])->name('rutaHoteles');

@@ -47,7 +47,7 @@
         <br>
         <br>
         <div class="btn-container">
-            <button type="button">Registrar</button>
+            <button type="button">Registrar</button>    
         </div>
     </div>
 </body>

@@ -1,0 +1,36 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; /* Altura mínima de la pantalla completa */
+    padding: 15px;
+    background-color: #ecf0f1;
+  }
+  
+  /* Estilo del encabezado principal */
+  h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+  }
+  
+  /* Contenedor del artículo */
+  .article-container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centramos el contenido */
+  }
+  
+  /* Estilo del párrafo */
+  .article-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #34495e;
+    text-align: justify;
+    margin-top: 10px;
+  }

@@ -10,8 +10,8 @@
     <header class="container">
         <h1>Sabiduría Infinita</h1>
         <section>
-            <a href="#"><h2 id="home">Inicio</h2></a>
-            <a href="#"><h2 id="registroLibro">Registro Libro</h2></a>
+            <a href="{{ route('rutaHome')}}"><h2 id="home">Inicio</h2></a>
+            <a href="{{ route('rutaRegistroLibro')}}"><h2 id="registroLibro">Registro Libro</h2></a>
         </section>
     </header> 
     @yield('contenido')

@@ -26,14 +26,15 @@ class controladorVistas extends Controller
         $editorial = $peticion->input('txteditorial');
         $emaileditorial = $peticion->input('txtemaileditorial');
     
-        $mensajeTotal = "📚 Registro de Libro Completado 📚\n\n" .
-                    "📕 ISBN: $isbn\n" .
-                    "📗 Título: $titulo\n" .
-                    "📘 Autor: $autor\n" .
-                    "📙 Páginas: $paginas\n" .
-                    "📅 Año: $anio\n" .
-                    "🏢 Editorial: $editorial\n" .
-                    "📧 Email de la Editorial: $emaileditorial";
+        $mensajeTotal = "📚 " . __('messages.registro_completado') . " 📚\n\n" .
+                "📕 " . __('messages.isbn') . ": $isbn\n" .
+                "📗 " . __('messages.titulo') . ": $titulo\n" .
+                "📘 " . __('messages.autor') . ": $autor\n" .
+                "📙 " . __('messages.paginas') . ": $paginas\n" .
+                "📅 " . __('messages.anio') . ": $anio\n" .
+                "🏢 " . __('messages.editorial') . ": $editorial\n" .
+                "📧 " . __('messages.email_editorial') . ": $emaileditorial";
+
     
         session()->flash('exito', $mensajeTotal);
     

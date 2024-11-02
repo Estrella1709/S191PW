@@ -6,7 +6,7 @@
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
     <div class="form-container">
-        <h2 class="tituloform">Formulario de Registro de Libro</h2>
+        <h2 class="tituloform">{{ __('Registro de Libro')}}</h2>
         <form method="POST" action="{{ route('rutaProcesarLibro') }}">
             @csrf
             <div class="form-group">
@@ -16,42 +16,42 @@
             </div>
 
             <div class="form-group">
-                <label for="titulo">Título</label>
+                <label for="titulo">{{ __('Título')}}</label>
                 <input type="text" name="txttitulo" value="{{old('txttitulo')}}">
                 <small>{{ $errors->first('txttitulo') }}</small>
             </div>
 
             <div class="form-group">
-                <label for="autor">Autor</label>
+                <label for="autor">{{ __('Autor')}}</label>
                 <input type="text" name="txtautor" value="{{old('txtautor')}}">
                 <small>{{ $errors->first('txtautor') }}</small>
             </div>
 
             <div class="form-group">
-                <label for="paginas">Páginas</label>
+                <label for="paginas">{{ __('Páginas')}}</label>
                 <input type="text" name="txtpaginas" value="{{old('txtpaginas')}}">
                 <small>{{ $errors->first('txtpaginas') }}</small>
             </div>
 
             <div class="form-group">
-                <label for="anio">Año</label>
+                <label for="anio">{{ __('Año')}}</label>
                 <input type="text" name="txtanio" value="{{old('txtanio')}}">
                 <small>{{ $errors->first('txtanio') }}</small>
             </div>
 
             <div class="form-group">
-                <label for="editorial">Editorial</label>
+                <label for="editorial">{{ __('Editorial')}}</label>
                 <input type="text" name="txteditorial"  value="{{old('txteditorial')}}">
                 <small>{{ $errors->first('txteditorial') }}</small>
             </div>
 
             <div class="form-group">
-                <label for="emaileditorial">Email de Editorial</label>
+                <label for="emaileditorial">{{ __('Email de Editorial')}}</label>
                 <input type="text" name="txtemaileditorial" value="{{old('txtemaileditorial')}}">
                 <small>{{ $errors->first('txtemaileditorial') }}</small>
             </div>
 
-            <input type="submit" value="Registrar Libro">
+            <input type="submit" value="{{ __('Registrar Libro')}}">
         </form>
     </div>
 

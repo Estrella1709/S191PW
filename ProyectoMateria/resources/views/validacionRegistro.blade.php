@@ -30,9 +30,7 @@
         <h3>Registro</h3>   
         <br>
         <p>Se te enviará al correo que ingresaste un código de confirmación para validar tu registro</p>
-        <div class="form-group">
-            <input type="text" class="custom-input" placeholder="Código">
-        </div>
+        <x-input-text placeholder="Código"/>
         <a href="">Reenviar código</a>
         <br>
         <br>

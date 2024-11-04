@@ -28,21 +28,11 @@
             <h1>Turista sin Maps</h1>
         </div>
         <h3>Registro</h3>   
-        <div class="form-group">
-            <input type="text" class="custom-input" placeholder="Nombre">
-        </div>
-        <div class="form-group">
-            <input type="text" class="custom-input" placeholder="Apellidos">
-        </div>
-        <div class="form-group">
-            <input type="text" class="custom-input" placeholder="Correo Electrónico">
-        </div>
-        <div class="form-group">
-            <input type="text" class="custom-input" placeholder="Teléfono">
-        </div>
-        <div class="form-group">
-            <input type="password" class="custom-input" placeholder="Contraseña">
-        </div>
+        <x-input-text placeholder="Nombre"/>
+        <x-input-text placeholder="Apellidos"/>
+        <x-input-text placeholder="Correo Electrónico"/>
+        <x-input-text placeholder="Teléfono"/>
+        <x-input-text placeholder="Contraseña"/>
         <a href="">¿Ya tienes una cuenta?</a>
         <br>
         <br>

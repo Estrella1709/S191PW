@@ -28,15 +28,9 @@
             <h1>Turista sin Maps</h1>
         </div>
         <h3>Recuperacion de Cuenta</h3>   
-        <div class="form-group">
-            <input type="text" class="custom-input" placeholder="Código">
-        </div>
-        <div class="form-group">
-            <input type="password" class="custom-input" placeholder="Nueva contraseña">
-        </div>
-        <div class="form-group">
-            <input type="password" class="custom-input" placeholder="Confirmar contraseña">
-        </div>
+        <x-input-text placeholder="Código"/>
+        <x-input-text placeholder="Nueva Contraseña"/>
+        <x-input-text placeholder="Confirmar Contraseña"/>
         <a href="">Reenviar código</a>
         <br>
         <br>

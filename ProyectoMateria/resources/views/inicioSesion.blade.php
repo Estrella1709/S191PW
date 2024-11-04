@@ -28,12 +28,8 @@
             <h1>Turista sin Maps</h1>
         </div>
         <h3>Inicio de Sesión</h3>   
-        <div class="form-group">
-            <input type="text" class="custom-input" placeholder="Correo Electrónico">
-        </div>
-        <div class="form-group">
-            <input type="password" class="custom-input" placeholder="Contraseña">
-        </div>
+        <x-input-text placeholder="Correo Electrónico"/>
+        <x-input-text placeholder="Contraseña"/>
         <a href="">¿Olvidaste tu contraseña?</a>
         <br>
         <a href="">Registrarse</a>

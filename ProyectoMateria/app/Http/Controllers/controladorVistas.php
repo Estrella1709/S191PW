@@ -25,4 +25,24 @@ class controladorVistas extends Controller
     public function hoteles(){
         return view('hoteles');
     }
+
+    public function detalleshotel(){
+        return view('detalleshotel');
+    }
+
+    public function reservahotel(){
+        return view('reservahotel');
+    }
+
+    public function vuelos(){
+        return view('vuelos');
+    }
+
+    public function detallesvuelo(){
+        return view('detallesvuelo');
+    }
+
+    public function reservavuelo(){
+        return view('reservavuelo');
+    }
 }

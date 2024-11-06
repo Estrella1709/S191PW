@@ -21,10 +21,6 @@
     <footer class="footer bg-dark text-white text-center py-3">
         <div class="container">
             <p>&copy; {{ date('Y') }} Turista sin Maps. Todos los derechos reservados.</p>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="/home" class="text-white">Sobre Nosotros</a></li>
-                <li class="list-inline-item"><a href="/cancelacion" class="text-white">Política de cancelación</a></li>
-            </ul>
         </div>
     </footer>
 

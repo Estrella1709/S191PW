@@ -45,4 +45,44 @@ class controladorVistas extends Controller
     public function reservavuelo(){
         return view('reservavuelo');
     }
+
+    public function CRUDusuarios(){
+        return view('CRUDusuarios');
+    }
+
+    public function CRUDhoteles(){
+        return view('CRUDhoteles');
+    }
+
+    public function CRUDvuelos(){
+        return view('CRUDvuelos');
+    }
+
+    public function CRUDreportes(){
+        return view('CRUDreportes');
+    }
+
+    public function detallesreportes(){
+        return view('detallesreportes');
+    }
+
+    public function agregarReporte(){
+        return view('agregarReporte');
+    }
+
+    public function notificaciones(){
+        return view('notificaciones');
+    }
+
+    public function editarnoti(){
+        return view('editarnoti');
+    }
+
+    public function politicas(){
+        return view('politicas');
+    }
+
+    public function editarpoliticas(){
+        return view('editarpoliticas');
+    }
 }

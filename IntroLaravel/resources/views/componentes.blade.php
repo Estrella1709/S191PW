@@ -4,6 +4,7 @@
 
 @section('contenido')
 
+
     <x-Card encabezado="componente 1" titulo="titulo 1" textoBoton="Guardar"> 
         Contenido de tarjeta 1
     </x-Card> 

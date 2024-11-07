@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    {{-- mandamos a llamar el bootstrap--}}
     @vite(['resources/js/app.js'])
+    {{-- script para el sweetalert--}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{--Agui esta la variable titulo--}}
     <title>@yield('titulo')</title>
     
 </head>
@@ -21,6 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        {{--esto es un request para cambiar el color del texto--}}
                         <a class="nav-link {{ request()->routeIs('rutacacas')?"text-warning":"" }}"  href="{{ route('rutacacas') }}">{{ __('Registro Clientes')}}</a>
                     </li>
                     <li class="nav-item">
@@ -33,6 +37,7 @@
 
     {{-- finaliza navbar --}}
 
+    {{-- aca la variable contenido--}}
     @yield('contenido')
 
 </body>

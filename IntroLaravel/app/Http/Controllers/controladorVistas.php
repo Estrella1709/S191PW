@@ -10,6 +10,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//si hay validador, mandamos a llamar el request
 use App\Http\Requests\validadorCliente;
 
 class controladorVistas extends Controller

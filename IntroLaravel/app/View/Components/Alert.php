@@ -4,6 +4,7 @@ namespace App\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
+//mandamos a llamar el componente
 use Illuminate\View\Component;
 
 //php artisan make:component "nombre del componente"

@@ -30,7 +30,7 @@ class validadorCliente extends FormRequest
             //se llene el campo, se pone una nueva validación con un "|" 
             'txtnombre'=>'required|min:3|max:20',
             'txtapellido'=>'required',
-            'txtcorreo'=>'required|email:rfc,dns',
+            'txtcorreo'=>'required|email',
             'txttelefono'=>'required|numeric'
             
         ];

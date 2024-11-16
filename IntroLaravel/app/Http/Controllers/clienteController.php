@@ -13,9 +13,16 @@ class clienteController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function home(){
+        //nombre de la vista en .blade.php
+        return view('inicio');
+    }
+
     public function index()
     {
-        //
+        $consultaClientes = DB::table('cliente')->get();
+        return view('clientes', compact('consultaClientes'));
     }
 
     /**
@@ -40,7 +47,7 @@ class clienteController extends Controller
             "updated_at"=>Carbon::now(),
         ]);
 
-        $usuario= $peticion->input('txtnombre');
+        $usuario= $request->input('txtnombre');
         session()->flash('exito', 'Se guardo el usuario: '. $usuario);
         return to_route('rutacacas');
     }

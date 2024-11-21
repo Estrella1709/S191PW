@@ -14,11 +14,13 @@ class clienteController extends Controller
      * Display a listing of the resource.
      */
 
+     //Vista de la pantalla de inicio
     public function home(){
         //nombre de la vista en .blade.php
         return view('inicio');
     }
 
+    //Aqui va la consulta directa a la base de datos, en este caso consultamos clientes
     public function index()
     {
         $consultaClientes = DB::table('cliente')->get();
@@ -26,7 +28,7 @@ class clienteController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Vista donde se hará el insert, el formulario
      */
     public function create()
     {
@@ -34,7 +36,7 @@ class clienteController extends Controller
     }
 
     /**
-     * Aquí preparo el Insert
+     * Aquí preparo el Insert junto con su validación
      */
     public function store(validadorCliente $request)
     {
@@ -45,7 +47,7 @@ class clienteController extends Controller
             "telefono"=>$request->input('txttelefono'),
             "created_at"=>Carbon::now(),
             "updated_at"=>Carbon::now(),
-        ]);
+        ]); 
 
         $usuario= $request->input('txtnombre');
         session()->flash('exito', 'Se guardo el usuario: '. $usuario);
@@ -61,26 +63,39 @@ class clienteController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Consulta la tabla cliente para encontrar el registro cuyo campo id coincida con el valor pasado como parámetro $id.
+     * Usa el método first() para obtener un único registro.
      */
-    public function edit(string $id)
-    {
-        //
+    public function edit(string $id){
+
+        $cliente = DB::table('cliente')->where('id', $id)->first();
+        return view('editarCliente', compact('cliente'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Busca el registro en la tabla cliente cuyo id coincida con $id.
+     * Actualiza los campos con los datos recibidos del formulario
      */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function update(validadorCliente $request,string $id){
+    // Validación y actualización
+        DB::table('cliente')->where('id', $id)->update([
+        "nombre" => $request->input('txtnombre'),
+        "apellido" => $request->input('txtapellido'),
+        "correo" => $request->input('txtcorreo'),
+        "telefono" => $request->input('txttelefono'),
+        "updated_at" => Carbon::now(),
+        ]);
+
+        $usuario= $request->input('txtnombre');
+        return redirect()->route('rutaconsulta')->with('success', 'Se ha actualizado correctamente el cliente: '. $usuario );
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Busca el registro en la tabla cliente cuyo campo id coincida con $id y lo elimina.
      */
-    public function destroy(string $id)
-    {
-        //
+    public function destroy($id){
+
+        DB::table('cliente')->where('id', $id)->delete();
+        return redirect()->route('rutaconsulta')->with('success', 'Se ha borrado correctamente el cliente.');
     }
 }

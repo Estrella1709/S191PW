@@ -52,33 +52,48 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-        //boton de eliminar
         const eliminarBotones = document.querySelectorAll('.btn-eliminar');
 
-        //alerta de si estas seguro de eliminar el dato
         eliminarBotones.forEach(boton => {
             boton.addEventListener('click', function () {
                 const form = this.closest('form');
 
                 Swal.fire({
-                    title: '¿Estás segura?',
-                    text: "¡No podrás revertir esto!",
-                    icon: 'warning',
+                    title: '<span style="color:#7fe2f1;">¿Estás segura?</span>',
+                    html: '<p style="color: #ffffff;">Este cambio no se puede deshacer. ¿Quieres continuar?</p>',
+                    imageUrl: '{{ asset('img/logo.png')}}',
+                    imageWidth: 150,
+                    imageHeight: 150,
+                    imageAlt: 'Imagen de error',
                     showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
+                    background: '#398F9D',
+                    color: '#d32f2f',
+                    confirmButtonColor: '#7fe2f1',
+                    cancelButtonColor: '#233abd',
                     confirmButtonText: 'Sí, eliminar',
                     cancelButtonText: 'Cancelar'
                 }).then((result) => {
-                    //confirmación de eliminación
                     if (result.isConfirmed) {
-                        form.submit();
+                        Swal.fire({
+                            imageUrl: '{{ asset('img/logo.png')}}',
+                            imageWidth: 150,
+                            imageHeight: 150,
+                            imageAlt: 'Imagen de éxito',
+                            title: '<h3 style="color:#7fe2f1;">Eliminado!</h3>',
+                            html: `<p style="font-size: 18px; color: #ffffff;">El cliente ha sido eliminado correctamente</p>`,
+                            confirmButtonText: 'Entendido',
+                            background: '#398F9D',
+                            color: '#7fe2f1',
+                            confirmButtonColor: '#7fe2f1',
+                        }).then(() => {
+                            form.submit();
+                        });
                     }
                 });
             });
         });
     });
 </script>
+
 
 @endsection

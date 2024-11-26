@@ -7,13 +7,20 @@
 @if(session('success'))
     <script>
         Swal.fire({
-            icon: 'success',
-            title: '¡Éxito!',
-            text: '{{ session('success') }}',
-            confirmButtonText: 'Aceptar'
+            imageUrl: '{{ asset('img/logo.png')}}',
+            imageWidth: 150,
+            imageHeight: 150,
+            imageAlt: 'Imagen de éxito',
+            title: '<h3 style="color:#7fe2f1;">¡Operación Exitosa!</h3>',
+            html: `<p style="font-size: 18px; color: #ffffff;">{{ session('success') }}</p>`,
+            confirmButtonText: 'Entendido',
+            background: '#398F9D',
+            color: '#7fe2f1',
+            confirmButtonColor: '#7fe2f1',
         });
     </script>
 @endif
+
 
 <div class="container mt-5 col-md-8">
     @foreach ($consultaClientes as $cliente)

@@ -7,10 +7,16 @@
 @if(session('success'))
     <script>
         Swal.fire({
-            icon: 'success',
-            title: '¡Éxito!',
-            text: '{{ session('success') }}',
-            confirmButtonText: 'Aceptar'
+            imageUrl: '{{ asset('img/logo.png')}}',
+            imageWidth: 150,
+            imageHeight: 150,
+            imageAlt: 'Imagen de éxito',
+            title: '<h3 style="color:#398F9D;">¡Operación Exitosa!</h3>',
+            html: `<p style="font-size: 18px; color: #398F9D;">{{ session('success') }}</p>`,
+            confirmButtonText: 'Entendido',
+            background: '#eaf7f8',
+            color: '#7fe2f1',
+            confirmButtonColor: '#398F9D',
         });
     </script>
 @endif
@@ -45,10 +51,8 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-
         //boton de eliminar
         const eliminarBotones = document.querySelectorAll('.btn-eliminar');
-
         //alerta de si estas seguro de eliminar el dato
         eliminarBotones.forEach(boton => {
             boton.addEventListener('click', function () {

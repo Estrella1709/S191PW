@@ -44,7 +44,7 @@
                     <div class="card-body text-justify">
 
                 {{--el formulario le ponemos el metodo post y la accion, la accion es la ruta que se define en el web --}}
-                        <form method="POST" action="/enviarCliente">
+                        <form method="POST" action="{{ route('cliente.store') }}">
                 {{-- es necesario el csrf --}}
                             @csrf 
                             

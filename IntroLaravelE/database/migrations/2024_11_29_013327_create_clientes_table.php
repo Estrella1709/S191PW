@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nombre',150);
+            $table->string('apellido');
+            $table->string('correo');
+            $table->string('telefono',20);
+            $table->timestamps(); //Son dos columnas extra para la administración y control de afirmación, el primero que manda es la fecha y hora que se creo, la segunda es la hora y fecha cuando se edito o actualizo el registro
+
         });
     }
 

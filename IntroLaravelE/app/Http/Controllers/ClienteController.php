@@ -19,7 +19,8 @@ class ClienteController extends Controller
 
     public function index()
     {
-        return view('clientes');
+        $consulta= cliente::all();
+        return view('clientes',compact('consulta'));
     }
 
     /**
@@ -35,7 +36,18 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $addCliente= new cliente();
+
+        $addCliente->nombre=$request->input('txtnombre');
+        $addCliente->apellido=$request->input('txtapellido');
+        $addCliente->correo=$request->input('txtcorreo');
+        $addCliente->telefono=$request->input('txttelefono');
+
+        $addCliente->save();
+
+        $usuario= $request->input('txtnombre');
+        session()->flash('exito', 'Se guardo el usuario: '. $usuario);
+        return redirect()->back();
     }
 
     /**
@@ -43,7 +55,7 @@ class ClienteController extends Controller
      */
     public function show(cliente $cliente)
     {
-        //
+        
     }
 
     /**
@@ -57,16 +69,36 @@ class ClienteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, cliente $cliente)
+    public function update(Request $request, $id)
     {
-        //
+
+        $upCliente= cliente::find($id);
+
+        $upCliente->nombre=$request->input('txtnombre');
+        $upCliente->apellido=$request->input('txtapellido');
+        $upCliente->correo=$request->input('txtcorreo');
+        $upCliente->telefono=$request->input('txttelefono');
+
+        $upCliente->update();
+
+        $usuario= $request->input('txtnombre');
+        session()->flash('exito', 'Se ha actualizao el usuario: '. $usuario);
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(cliente $cliente)
+    public function destroy(Request $request, $id)
     {
-        //
+
+        $usuario= $request->input('txtnombre');
+        
+        $delCliente= cliente::find($id);
+        $delCliente->delete();
+
+        session()->flash('exito', 'Se ha actualizao el usuario: '. $usuario);
+        return redirect()->back();
+
     }
 }

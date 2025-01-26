@@ -11,12 +11,12 @@
             imageWidth: 150,
             imageHeight: 150,
             imageAlt: 'Imagen de éxito',
-            title: '<h3 style="color:#7fe2f1;">¡Operación Exitosa!</h3>',
-            html: `<p style="font-size: 18px; color: #ffffff;">{{ session('success') }}</p>`,
+            title: '<h3 style="color:#398F9D;">¡Operación Exitosa!</h3>',
+            html: `<p style="font-size: 18px; color: #398F9D;">{{ session('success') }}</p>`,
             confirmButtonText: 'Entendido',
-            background: '#398F9D',
+            background: '#eaf7f8',
             color: '#7fe2f1',
-            confirmButtonColor: '#7fe2f1',
+            confirmButtonColor: '#398F9D',
         });
     </script>
 @endif
@@ -52,47 +52,48 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const eliminarBotones = document.querySelectorAll('.btn-eliminar');
+    const eliminarBotones = document.querySelectorAll('.logout-button');
 
-        eliminarBotones.forEach(boton => {
-            boton.addEventListener('click', function () {
-                const form = this.closest('form');
+    eliminarBotones.forEach(boton => {
+        boton.addEventListener('click', function (e) {
+            e.preventDefault(); // Evita que el formulario se envíe inmediatamente
 
-                Swal.fire({
-                    title: '<span style="color:#7fe2f1;">¿Estás segura?</span>',
-                    html: '<p style="color: #ffffff;">Este cambio no se puede deshacer. ¿Quieres continuar?</p>',
-                    imageUrl: '{{ asset('img/logo.png')}}',
-                    imageWidth: 150,
-                    imageHeight: 150,
-                    imageAlt: 'Imagen de error',
-                    showCancelButton: true,
-                    background: '#398F9D',
-                    color: '#d32f2f',
-                    confirmButtonColor: '#7fe2f1',
-                    cancelButtonColor: '#233abd',
-                    confirmButtonText: 'Sí, eliminar',
-                    cancelButtonText: 'Cancelar'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire({
-                            imageUrl: '{{ asset('img/logo.png')}}',
-                            imageWidth: 150,
-                            imageHeight: 150,
-                            imageAlt: 'Imagen de éxito',
-                            title: '<h3 style="color:#7fe2f1;">Eliminado!</h3>',
-                            html: `<p style="font-size: 18px; color: #ffffff;">El cliente ha sido eliminado correctamente</p>`,
-                            confirmButtonText: 'Entendido',
-                            background: '#398F9D',
-                            color: '#7fe2f1',
-                            confirmButtonColor: '#7fe2f1',
-                        }).then(() => {
-                            form.submit();
-                        });
-                    }
-                });
+            const form = this.closest('form');
+
+            Swal.fire({
+                title: '<span style="color:#398F9D;">¿Estás segur@ de que quieres cerrar sesión?</span>',
+                imageUrl: '{{ asset('img/logo.png') }}',
+                imageWidth: 150,
+                imageHeight: 150,
+                imageAlt: 'Imagen de error',
+                showCancelButton: true,
+                background: '#eaf7f8',
+                color: '#d32f2f',
+                confirmButtonColor: '#398F9D',
+                cancelButtonColor: '#233abd',
+                confirmButtonText: 'Sí, cerrar sesión',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        imageUrl: '{{ asset('img/logo.png') }}',
+                        imageWidth: 150,
+                        imageHeight: 150,
+                        imageAlt: 'Imagen de éxito',
+                        title: '<h3 style="color:#398F9D;">Sesión cerrada correctamente</h3>',
+                        confirmButtonText: 'Entendido',
+                        background: '#eaf7f8',
+                        color: '#7fe2f1',
+                        confirmButtonColor: '#398F9D',
+                    }).then(() => {
+                        form.submit(); // Ahora sí, se envía el formulario después de la confirmación
+                    });
+                }
             });
         });
     });
+});
+
 </script>
 
 
